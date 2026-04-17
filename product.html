@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tikka T3x Ace Game — Premium Hunting & Precision Rifle</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        forest: '#1F2A23',
+        gold: '#C6A36D',
+        neutral: '#F5F5F3',
+        ink: '#111111',
+        cta: '#E67E22',
+        'forest-light': '#2E3F33',
+        'forest-muted': '#3D5244',
+        'gold-light': '#D4B98A',
+        'gold-dark': '#A8864F',
+      },
+      fontFamily: {
+        display: ['Barlow Condensed', 'sans-serif'],
+        serif: ['Crimson Pro', 'serif'],
+        body: ['Barlow', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  * { -webkit-font-smoothing: antialiased; }
+  body { background: #F5F5F3; font-family: 'Barlow', sans-serif; }
+
+  .hero-img-container { position: relative; }
+  .hero-img-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 50%, rgba(198,163,109,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .feature-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(31,42,35,0.12);
+  }
+
+  .vendor-row { transition: background 0.15s ease; }
+  .vendor-row:hover { background: rgba(198,163,109,0.07); }
+
+  .tag-btn {
+    transition: all 0.2s ease;
+    border: 1.5px solid #C6A36D;
+    color: #1F2A23;
+  }
+  .tag-btn:hover {
+    background: #1F2A23;
+    color: #C6A36D;
+    border-color: #1F2A23;
+  }
+
+  .sticky-sidebar {
+    position: sticky;
+    top: 90px;
+  }
+
+  .qty-btn { transition: background 0.15s; }
+  .qty-btn:hover { background: #1F2A23; color: #fff; }
+
+  .section-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C6A36D55, transparent);
+  }
+
+  .spec-row:nth-child(even) { background: rgba(31,42,35,0.03); }
+
+  .config-row:nth-child(even) { background: rgba(198,163,109,0.05); }
+
+  .media-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+  }
+  .media-card:hover { transform: scale(1.02); box-shadow: 0 20px 50px rgba(31,42,35,0.15); }
+
+  .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #2ECC71; display: inline-block; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+  .gold-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: #C6A36D;
+  }
+
+  /* Sticky Price Bar */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+
+  .nav-link { transition: color 0.15s; }
+  .nav-link:hover { color: #C6A36D; }
+
+  .cta-primary {
+    background: #E67E22;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .cta-primary:hover { background: #D35400; transform: translateY(-1px); }
+  .cta-primary:active { transform: translateY(0); }
+
+  .cta-secondary {
+    border: 2px solid #1F2A23;
+    transition: all 0.2s;
+  }
+  .cta-secondary:hover { background: #1F2A23; color: #fff; }
+
+  .img-rifle {
+    filter: drop-shadow(0 30px 60px rgba(31,42,35,0.22));
+    transition: transform 0.4s ease;
+  }
+  .img-rifle:hover { transform: scale(1.02) rotate(-0.5deg); }
+
+  @media (max-width: 768px) {
+    .sticky-sidebar { position: relative; top: 0; }
+  }
+</style>
+</head>
+<body class="text-ink">
+
+<!-- NAV -->
+<nav class="bg-forest text-white px-6 py-4 flex items-center justify-between sticky top-0 z-40 shadow-lg">
+  <div class="flex items-center gap-8">
+    <div class="font-display text-xl font-800 tracking-widest text-gold uppercase">TacticalFind</div>
+    <div class="hidden md:flex gap-6 text-sm font-body font-400 text-white/70">
+      <a href="#" class="nav-link">Rifles</a>
+      <a href="#" class="nav-link">Optics</a>
+      <a href="#" class="nav-link">Accessories</a>
+      <a href="#" class="nav-link">Compare</a>
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <div class="hidden md:flex items-center gap-2 bg-white/10 rounded-lg px-3 py-2 text-sm text-white/70">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <span>Search rifles...</span>
+    </div>
+    <div class="relative cursor-pointer">
+      <svg class="w-6 h-6 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      <span class="absolute -top-1 -right-1 bg-cta text-white text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="max-w-7xl mx-auto px-4 md:px-8 py-3 text-xs text-ink/50 font-body">
+  <span>Home</span> <span class="mx-2">/</span>
+  <span>Bolt Action Rifles</span> <span class="mx-2">/</span>
+  <span>Tikka</span> <span class="mx-2">/</span>
+  <span class="text-forest font-500">T3x Ace Game</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 pb-16 pt-4">
+  <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+    <!-- LEFT: Product Image -->
+    <div class="hero-img-container bg-gradient-to-br from-white to-neutral rounded-2xl p-8 md:p-12 flex items-center justify-center min-h-80 border border-black/5 shadow-sm">
+      <div class="w-full relative">
+        <!-- SVG Rifle illustration -->
+        <svg class="img-rifle w-full" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+          <!-- Stock rear -->
+          <rect x="20" y="95" width="90" height="30" rx="6" fill="#2E3F33"/>
+          <rect x="22" y="97" width="86" height="26" rx="5" fill="#3D5244"/>
+          <!-- Cheek riser -->
+          <rect x="55" y="72" width="55" height="23" rx="5" fill="#2E3F33"/>
+          <!-- Rear spacers/adjusters -->
+          <rect x="20" y="110" width="12" height="15" rx="2" fill="#1F2A23"/>
+          <rect x="36" y="110" width="12" height="15" rx="2" fill="#C6A36D" opacity="0.7"/>
+          <!-- Main chassis body -->
+          <rect x="108" y="88" width="280" height="44" rx="8" fill="#2E3F33"/>
+          <rect x="110" y="90" width="276" height="40" rx="7" fill="#3D5244"/>
+          <!-- Chassis detail lines -->
+          <rect x="130" y="92" width="2" height="36" rx="1" fill="#1F2A23" opacity="0.4"/>
+          <rect x="160" y="92" width="2" height="36" rx="1" fill="#1F2A23" opacity="0.4"/>
+          <rect x="200" y="92" width="2" height="36" rx="1" fill="#1F2A23" opacity="0.4"/>
+          <rect x="240" y="92" width="2" height="36" rx="1" fill="#1F2A23" opacity="0.4"/>
+          <!-- M-LOK slots -->
+          <rect x="140" y="98" width="12" height="5" rx="1" fill="#1F2A23" opacity="0.6"/>
+          <rect x="158" y="98" width="12" height="5" rx="1" fill="#1F2A23" opacity="0.6"/>
+          <rect x="176" y="98" width="12" height="5" rx="1" fill="#1F2A23" opacity="0.6"/>
+          <rect x="194" y="98" width="12" height="5" rx="1" fill="#1F2A23" opacity="0.6"/>
+          <rect x="212" y="98" width="12" height="5" rx="1" fill="#1F2A23" opacity="0.6"/>
+          <!-- Barrel -->
+          <rect x="385" y="103" width="255" height="14" rx="7" fill="#1F2A23"/>
+          <rect x="387" y="105" width="251" height="10" rx="5" fill="#2E3F33"/>
+          <!-- Fluting on barrel -->
+          <line x1="420" y1="105" x2="420" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="440" y1="105" x2="440" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="460" y1="105" x2="460" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="480" y1="105" x2="480" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="500" y1="105" x2="500" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="520" y1="105" x2="520" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="540" y1="105" x2="540" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="560" y1="105" x2="560" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="580" y1="105" x2="580" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <line x1="600" y1="105" x2="600" y2="115" stroke="#1F2A23" stroke-width="1.5" opacity="0.7"/>
+          <!-- Muzzle thread protector -->
+          <rect x="637" y="101" width="18" height="18" rx="3" fill="#C6A36D"/>
+          <rect x="655" y="104" width="10" height="12" rx="2" fill="#A8864F"/>
+          <!-- Action/receiver -->
+          <rect x="340" y="84" width="60" height="52" rx="8" fill="#2E3F33"/>
+          <rect x="342" y="86" width="56" height="48" rx="7" fill="#3D5244"/>
+          <!-- Bolt handle -->
+          <line x1="390" y1="88" x2="410" y2="68" stroke="#C6A36D" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="412" cy="66" r="8" fill="#C6A36D"/>
+          <circle cx="412" cy="66" r="5" fill="#D4B98A"/>
+          <!-- Ejection port -->
+          <rect x="355" y="100" width="30" height="18" rx="3" fill="#1F2A23"/>
+          <!-- Magazine -->
+          <rect x="165" y="132" width="50" height="28" rx="5" fill="#2E3F33"/>
+          <rect x="167" y="134" width="46" height="24" rx="4" fill="#3D5244"/>
+          <rect x="172" y="138" width="36" height="4" rx="2" fill="#C6A36D" opacity="0.5"/>
+          <rect x="172" y="145" width="36" height="4" rx="2" fill="#C6A36D" opacity="0.3"/>
+          <!-- Pistol grip -->
+          <path d="M260 132 Q265 145 258 170 Q252 182 270 182 Q288 178 285 165 Q282 150 280 132Z" fill="#2E3F33"/>
+          <path d="M262 134 Q267 147 260 170 Q255 180 270 180 Q285 176 283 165 Q280 152 278 134Z" fill="#3D5244"/>
+          <!-- Trigger guard -->
+          <path d="M300 132 Q310 150 285 165 Q290 152 295 132Z" fill="#2E3F33" stroke="#1F2A23" stroke-width="1"/>
+          <!-- Trigger -->
+          <rect x="298" y="128" width="4" height="18" rx="2" fill="#C6A36D"/>
+          <!-- Scope rail (Picatinny) -->
+          <rect x="350" y="80" width="80" height="8" rx="2" fill="#C6A36D"/>
+          <rect x="355" y="78" width="8" height="4" rx="1" fill="#A8864F"/>
+          <rect x="367" y="78" width="8" height="4" rx="1" fill="#A8864F"/>
+          <rect x="379" y="78" width="8" height="4" rx="1" fill="#A8864F"/>
+          <rect x="391" y="78" width="8" height="4" rx="1" fill="#A8864F"/>
+          <!-- ARCA rail -->
+          <rect x="120" y="130" width="200" height="8" rx="2" fill="#C6A36D" opacity="0.6"/>
+          <!-- Forend -->
+          <rect x="108" y="90" width="40" height="40" rx="6" fill="#2E3F33"/>
+          <!-- Label text -->
+          <text x="350" y="200" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#C6A36D" opacity="0.8">TIKKA T3X ACE GAME</text>
+        </svg>
+
+        <!-- View angles -->
+        <div class="flex gap-2 mt-6 justify-center">
+          <div class="w-14 h-14 bg-white border-2 border-gold rounded-xl flex items-center justify-center cursor-pointer shadow-sm">
+            <svg viewBox="0 0 40 20" class="w-10"><rect x="1" y="7" width="38" height="6" rx="3" fill="#2E3F33"/><circle cx="32" cy="10" r="3" fill="#C6A36D"/></svg>
+          </div>
+          <div class="w-14 h-14 bg-white border border-black/10 rounded-xl flex items-center justify-center cursor-pointer shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+            <svg viewBox="0 0 40 40" class="w-8"><rect x="5" y="14" width="30" height="12" rx="4" fill="#3D5244"/><rect x="8" y="26" width="12" height="6" rx="2" fill="#2E3F33"/></svg>
+          </div>
+          <div class="w-14 h-14 bg-white border border-black/10 rounded-xl flex items-center justify-center cursor-pointer shadow-sm opacity-60 hover:opacity-100 transition-opacity">
+            <svg viewBox="0 0 40 40" class="w-8"><circle cx="20" cy="20" r="12" fill="none" stroke="#3D5244" stroke-width="3"/><circle cx="20" cy="20" r="5" fill="#C6A36D"/><line x1="20" y1="8" x2="20" y2="12" stroke="#3D5244" stroke-width="2"/><line x1="20" y1="28" x2="20" y2="32" stroke="#3D5244" stroke-width="2"/><line x1="8" y1="20" x2="12" y2="20" stroke="#3D5244" stroke-width="2"/><line x1="28" y1="20" x2="32" y2="20" stroke="#3D5244" stroke-width="2"/></svg>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="flex gap-2 mt-4 justify-center flex-wrap">
+          <span class="text-xs bg-forest text-gold px-3 py-1 rounded-full font-display tracking-wider font-600">NEW 2025</span>
+          <span class="text-xs bg-gold/20 text-gold-dark border border-gold/40 px-3 py-1 rounded-full font-body">Finnish Precision</span>
+          <span class="text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-body flex items-center gap-1"><span class="badge-dot"></span> In Stock</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Info + Pricing -->
+    <div class="sticky-sidebar">
+      <!-- Brand + Category -->
+      <div class="flex items-center gap-3 mb-3">
+        <span class="font-display text-sm tracking-widest text-forest/60 uppercase font-600">Tikka · Bolt Action Rifles</span>
+        <span class="text-xs border border-gold/50 text-gold rounded-full px-2 py-0.5 font-body">Hunting + Precision</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="font-display text-4xl md:text-5xl font-800 text-forest leading-none tracking-tight mb-2 gold-underline">
+        T3x Ace Game
+      </h1>
+      <p class="font-serif text-lg text-ink/60 italic mt-4 mb-5">The modular field rifle — born for long hunts, built for precision.</p>
+
+      <!-- Rating -->
+      <div class="flex items-center gap-3 mb-6">
+        <div class="flex text-gold">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <span class="text-sm text-ink/50 font-body">4.8 (214 reviews)</span>
+        <span class="text-sm text-cta font-500 font-body">· 47 vendors</span>
+      </div>
+
+      <!-- Quick Specs -->
+      <div class="grid grid-cols-3 gap-3 mb-6">
+        <div class="bg-white border border-black/8 rounded-xl p-3 text-center shadow-sm">
+          <div class="text-xs text-ink/40 font-body mb-1 uppercase tracking-widest">Calibers</div>
+          <div class="font-display text-sm font-700 text-forest leading-tight">.223–.300</div>
+        </div>
+        <div class="bg-white border border-black/8 rounded-xl p-3 text-center shadow-sm">
+          <div class="text-xs text-ink/40 font-body mb-1 uppercase tracking-widest">Barrel</div>
+          <div class="font-display text-sm font-700 text-forest">24"</div>
+        </div>
+        <div class="bg-white border border-black/8 rounded-xl p-3 text-center shadow-sm">
+          <div class="text-xs text-ink/40 font-body mb-1 uppercase tracking-widest">Weight</div>
+          <div class="font-display text-sm font-700 text-forest">~8.8 lbs</div>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="bg-forest rounded-2xl p-5 mb-5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-40 h-40 bg-white/3 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div class="relative">
+          <div class="text-gold/60 text-xs font-body uppercase tracking-widest mb-1">Starting From</div>
+          <div class="flex items-baseline gap-2 mb-1">
+            <span class="font-display text-4xl font-800 text-white">$1,499</span>
+            <span class="text-white/40 text-sm line-through font-body">$1,749</span>
+            <span class="bg-cta text-white text-xs px-2 py-0.5 rounded-full font-700">SAVE 14%</span>
+          </div>
+          <p class="text-white/50 text-xs font-body">Best price found across 47 vendors · Updated 2h ago</p>
+        </div>
+      </div>
+
+      <!-- Caliber selector -->
+      <div class="mb-5">
+        <label class="text-xs font-display font-600 uppercase tracking-widest text-ink/50 mb-2 block">Select Caliber</label>
+        <div class="flex flex-wrap gap-2">
+          <button class="px-3 py-1.5 rounded-lg text-sm font-body bg-forest text-white font-500">.223 Rem</button>
+          <button class="px-3 py-1.5 rounded-lg text-sm font-body bg-white border border-black/15 text-ink hover:border-forest transition-colors">.308 Win</button>
+          <button class="px-3 py-1.5 rounded-lg text-sm font-body bg-white border border-black/15 text-ink hover:border-forest transition-colors">6.5 Creedmoor</button>
+          <button class="px-3 py-1.5 rounded-lg text-sm font-body bg-white border border-black/15 text-ink hover:border-forest transition-colors">6.5 PRC</button>
+          <button class="px-3 py-1.5 rounded-lg text-sm font-body bg-white border border-black/15 text-ink hover:border-forest transition-colors">.300 Win Mag</button>
+        </div>
+      </div>
+
+      <!-- Quantity + CTA -->
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex items-center border border-black/15 rounded-xl overflow-hidden bg-white">
+          <button class="qty-btn px-4 py-3 text-ink font-600 text-lg font-body border-r border-black/10">−</button>
+          <span class="px-5 py-3 font-body font-500 min-w-12 text-center">1</span>
+          <button class="qty-btn px-4 py-3 text-ink font-600 text-lg font-body border-l border-black/10">+</button>
+        </div>
+        <button class="cta-primary flex-1 text-white font-display text-lg font-700 tracking-wider py-3.5 rounded-xl shadow-lg">
+          Add to Cart
+        </button>
+      </div>
+      <button class="cta-secondary w-full font-display text-lg font-700 tracking-wider py-3.5 rounded-xl text-forest mb-5">
+        ⚖ Compare All Vendors
+      </button>
+
+      <!-- Trust Badges -->
+      <div class="grid grid-cols-3 gap-2">
+        <div class="flex flex-col items-center gap-1 text-center bg-white rounded-xl p-2.5 border border-black/6">
+          <svg class="w-5 h-5 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span class="text-xs text-ink/50 font-body leading-tight">FFL Verified</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-center bg-white rounded-xl p-2.5 border border-black/6">
+          <svg class="w-5 h-5 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          <span class="text-xs text-ink/50 font-body leading-tight">Free Ship $500+</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 text-center bg-white rounded-xl p-2.5 border border-black/6">
+          <svg class="w-5 h-5 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          <span class="text-xs text-ink/50 font-body leading-tight">30-Day Return</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- KEY FEATURES -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+  <div class="mb-10">
+    <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Engineering</p>
+    <h2 class="font-display text-3xl md:text-4xl font-800 text-forest tracking-tight">Key Platform Features</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">CHASSIS</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">Modular Chassis System</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Aluminum Ace chassis compatible with all T3, T3x, and T1x barreled actions. Seamlessly swap configurations for field or competition.</p>
+    </div>
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">BARREL</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">Fluted Medium Contour</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Cold hammer-forged, free-floating barrel with longitudinal fluting. Reduces weight while dissipating heat — ideal for prolonged field use.</p>
+    </div>
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">ERGONOMICS</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">Fully Adjustable Stock</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Skeletonized rear stock with adjustable length of pull, cheek rest height, and recoil pad. Ambidextrous thumb rest for solid repeatable grip.</p>
+    </div>
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">RAILS</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">M-LOK + ARCA Rail System</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Integrated M-LOK handguard slots and full-length RRS ARCA rail for bipod, tripod, or accessory mounting. 20 MOA Picatinny optic base included.</p>
+    </div>
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h7"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">VERSATILITY</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">Multi-Caliber Support</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Available from .223 Rem to .300 Win Mag, including 6.5 Creedmoor, 6.5 PRC, .308 Win and 7mm Rem Mag. One platform, every mission.</p>
+    </div>
+
+    <div class="feature-card bg-white rounded-2xl p-6 border border-black/6 shadow-sm">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center mb-4">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-9.272 6.272a9 9 0 1112.728 0M12 3v1m0 16v1m9-9h-1M4 12H3m15.657-5.657l-.707.707M6.343 6.343l-.707-.707m12.728 12.728l-.707-.707M6.343 17.657l-.707.707"/></svg>
+      </div>
+      <div class="inline-block bg-gold/15 text-gold-dark text-xs font-display font-700 tracking-wider px-2 py-0.5 rounded mb-3">TRIGGER</div>
+      <h3 class="font-display text-xl font-700 text-forest mb-2 tracking-tight">Precision Adjustable Trigger</h3>
+      <p class="font-body text-sm text-ink/60 leading-relaxed">Single-stage trigger adjustable from 2–4 lbs pull weight. Crisp, consistent break for repeatable accuracy at distance. Finnish-engineered reliability.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- OVERVIEW -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Platform Overview</p>
+      <h2 class="font-display text-3xl md:text-4xl font-800 text-forest tracking-tight mb-6">One Rifle. Every Terrain.</h2>
+      <div class="prose font-serif text-lg text-ink/70 leading-relaxed space-y-4">
+        <p>The Tikka T3x Ace Game bridges the gap between the dedicated hunting field rifle and the precision competition platform. Sharing the same modular Ace chassis as the T3x Ace Target, the Game variant distinguishes itself with a fluted medium-contour barrel — lighter for mountain carries, accurate enough for long-range ethical shots.</p>
+        <p>Where the Ace Target prioritizes raw bench performance with its heavier barrel, the Ace Game is the all-rounder — equally at home on a NRL Hunter stage as it is on a dawn stalk. The modular chassis accepts all T3, T3x, and T1x barreled actions, meaning a single stock investment covers your entire Tikka ecosystem.</p>
+        <p>Calibers span .223 Rem through .300 Win Mag, with cold hammer-forged barrels engineered in Riihimäki, Finland to the same exacting tolerances Sako uses in their flagship line. Every Tikka ships with a sub-MOA guarantee.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-forest rounded-2xl p-6 text-white">
+        <div class="font-display text-5xl font-800 text-gold mb-2">Sub-</div>
+        <div class="font-display text-3xl font-700 text-white">MOA</div>
+        <div class="font-body text-sm text-white/50 mt-2">Factory accuracy guarantee from Tikka/Sako</div>
+      </div>
+      <div class="bg-white border border-black/8 rounded-2xl p-6">
+        <div class="font-display text-5xl font-800 text-forest mb-2">47+</div>
+        <div class="font-display text-xl font-700 text-forest">Vendors</div>
+        <div class="font-body text-sm text-ink/50 mt-2">Competing on price across the US</div>
+      </div>
+      <div class="bg-white border border-black/8 rounded-2xl p-6">
+        <div class="font-display text-5xl font-800 text-forest mb-2">6</div>
+        <div class="font-display text-xl font-700 text-forest">Calibers</div>
+        <div class="font-body text-sm text-ink/50 mt-2">.223 to .300 Win Mag</div>
+      </div>
+      <div class="bg-gold rounded-2xl p-6">
+        <div class="font-display text-5xl font-800 text-forest mb-2">8.8</div>
+        <div class="font-display text-xl font-700 text-forest">Pounds</div>
+        <div class="font-body text-sm text-forest/60 mt-2">Configured weight with 24" barrel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- SPECS TABLE -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+  <div class="grid lg:grid-cols-2 gap-12">
+
+    <!-- Specifications -->
+    <div>
+      <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Technical Data</p>
+      <h2 class="font-display text-3xl font-800 text-forest tracking-tight mb-6">Specifications</h2>
+      <div class="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm">
+        <table class="w-full">
+          <tbody>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5 w-2/5">Action Type</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">Bolt Action — 60° Throw</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Barrel Length</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">20" / 24" (caliber dependent)</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Barrel Profile</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">Fluted Medium Contour, CHF</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Overall Weight</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">3.8–4 kg (8.4–8.8 lbs)</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Magazine Capacity</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">5 Rounds (detachable)</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Optic Rail</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">20 MOA Picatinny (factory)</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Accessory Rail</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">M-LOK + RRS ARCA</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Trigger</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">Single Stage, Adj. 2–4 lbs</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Muzzle Thread</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">5/8"–24 TPI</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50 border-b border-black/5">Safety</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest border-b border-black/5">Two-Stage Push Button</td>
+            </tr>
+            <tr class="spec-row">
+              <td class="px-5 py-3.5 text-sm font-body font-500 text-ink/50">Stock Material</td>
+              <td class="px-5 py-3.5 text-sm font-body font-600 text-forest">Aluminum / Composite Chassis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Configurations -->
+    <div>
+      <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Available Builds</p>
+      <h2 class="font-display text-3xl font-800 text-forest tracking-tight mb-6">Configurations</h2>
+      <div class="bg-white rounded-2xl border border-black/8 overflow-hidden shadow-sm overflow-x-auto">
+        <table class="w-full min-w-max">
+          <thead>
+            <tr class="bg-forest text-white">
+              <th class="px-4 py-3 text-left text-xs font-display font-700 tracking-widest">Caliber</th>
+              <th class="px-4 py-3 text-left text-xs font-display font-700 tracking-widest">Barrel</th>
+              <th class="px-4 py-3 text-left text-xs font-display font-700 tracking-widest">Twist</th>
+              <th class="px-4 py-3 text-left text-xs font-display font-700 tracking-widest">Weight</th>
+              <th class="px-4 py-3 text-left text-xs font-display font-700 tracking-widest">Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="config-row border-b border-black/5">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">.223 Rem</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:8"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">3.8 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+            <tr class="config-row border-b border-black/5">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">.308 Win</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">20" / 24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:10"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">4.0 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+            <tr class="config-row border-b border-black/5">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">6.5 Creedmoor</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:8"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">3.8 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+            <tr class="config-row border-b border-black/5">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">6.5 PRC</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:8"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">3.9 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+            <tr class="config-row border-b border-black/5">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">7mm Rem Mag</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:9"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">4.0 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+            <tr class="config-row">
+              <td class="px-4 py-3 text-sm font-body font-600 text-forest">.300 Win Mag</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">24"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">1:10"</td>
+              <td class="px-4 py-3 text-sm font-body text-ink/60">4.0 kg</td>
+              <td class="px-4 py-3 text-sm"><span class="badge-dot"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- PRODUCT TAGS -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-10">
+  <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-4">Categories</p>
+  <div class="flex flex-wrap gap-3">
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">🦌 Hunting</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">🎯 Precision Shooting</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">🔩 Bolt Action</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">⚙️ Modular Rifle</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">📏 Long Range</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">🏆 PRS / NRL Hunter</button>
+    <button class="tag-btn rounded-full px-5 py-2 text-sm font-display font-700 tracking-wide">🇫🇮 Finnish Made</button>
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- MEDIA GALLERY -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+  <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Media</p>
+  <h2 class="font-display text-3xl font-800 text-forest tracking-tight mb-8">In the Field</h2>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Video 1 -->
+    <div class="media-card lg:col-span-2 bg-forest-light rounded-2xl aspect-video flex items-center justify-center cursor-pointer relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-forest to-forest-muted opacity-90"></div>
+      <div class="relative text-center z-10">
+        <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-white/30">
+          <svg class="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="font-display text-white font-700 text-lg">T3x Ace Game — Field Review</div>
+        <div class="font-body text-white/50 text-sm mt-1">15:42 · RifleShooterMag</div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0 h-1 bg-cta opacity-60"></div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="media-card lg:col-span-2 bg-forest rounded-2xl aspect-video flex items-center justify-center cursor-pointer relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-forest-muted to-forest opacity-95"></div>
+      <div class="relative text-center z-10">
+        <div class="w-16 h-16 bg-gold/25 rounded-full flex items-center justify-center mx-auto mb-3 border-2 border-gold/40">
+          <svg class="w-7 h-7 text-gold ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="font-display text-white font-700 text-lg">Chassis Overview — Modular Setup</div>
+        <div class="font-body text-white/50 text-sm mt-1">8:17 · Tikka Official</div>
+      </div>
+    </div>
+
+    <!-- Image card 1 -->
+    <div class="media-card bg-gradient-to-br from-neutral to-white rounded-2xl aspect-video flex items-center justify-center border border-black/8 cursor-pointer relative overflow-hidden">
+      <div class="text-center">
+        <svg class="w-12 h-12 text-forest/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <div class="font-body text-xs text-ink/30">Stock Adjustment Detail</div>
+      </div>
+      <div class="absolute bottom-3 left-3 bg-forest text-white text-xs font-display font-700 px-2 py-1 rounded-lg tracking-wider">PHOTO</div>
+    </div>
+
+    <!-- Image card 2 -->
+    <div class="media-card bg-gradient-to-br from-neutral to-white rounded-2xl aspect-video flex items-center justify-center border border-black/8 cursor-pointer relative overflow-hidden">
+      <div class="text-center">
+        <svg class="w-12 h-12 text-forest/20 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <div class="font-body text-xs text-ink/30">ARCA Rail System Close-Up</div>
+      </div>
+      <div class="absolute bottom-3 left-3 bg-gold text-forest text-xs font-display font-700 px-2 py-1 rounded-lg tracking-wider">PHOTO</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- DOCUMENTS -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-14">
+  <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-2">Resources</p>
+  <h2 class="font-display text-3xl font-800 text-forest tracking-tight mb-8">Documents & Downloads</h2>
+  <div class="grid sm:grid-cols-3 gap-4">
+
+    <a href="#" class="feature-card flex items-center gap-4 bg-white rounded-2xl p-5 border border-black/8 shadow-sm no-underline group">
+      <div class="w-12 h-12 bg-cta/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-cta/20 transition-colors">
+        <svg class="w-6 h-6 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <div>
+        <div class="font-display text-base font-700 text-forest">Product Brochure</div>
+        <div class="font-body text-xs text-ink/40 mt-0.5">PDF · 3.2 MB</div>
+      </div>
+    </a>
+
+    <a href="#" class="feature-card flex items-center gap-4 bg-white rounded-2xl p-5 border border-black/8 shadow-sm no-underline group">
+      <div class="w-12 h-12 bg-forest/8 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-forest/15 transition-colors">
+        <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <div>
+        <div class="font-display text-base font-700 text-forest">Owner's Manual</div>
+        <div class="font-body text-xs text-ink/40 mt-0.5">PDF · 8.1 MB</div>
+      </div>
+    </a>
+
+    <a href="#" class="feature-card flex items-center gap-4 bg-white rounded-2xl p-5 border border-black/8 shadow-sm no-underline group">
+      <div class="w-12 h-12 bg-gold/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold/25 transition-colors">
+        <svg class="w-6 h-6 text-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </div>
+      <div>
+        <div class="font-display text-base font-700 text-forest">Spec Sheet</div>
+        <div class="font-body text-xs text-ink/40 mt-0.5">PDF · 1.4 MB</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SECTION LINE -->
+<div class="max-w-7xl mx-auto px-4 md:px-8"><div class="section-line"></div></div>
+
+<!-- LIVE INVENTORY TABLE -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+    <div>
+      <p class="font-display text-sm tracking-widest text-gold uppercase font-600 mb-1">Price Aggregator</p>
+      <h2 class="font-display text-3xl font-800 text-forest tracking-tight">Live Vendor Inventory</h2>
+    </div>
+    <div class="flex items-center gap-2 text-sm font-body text-ink/50">
+      <span class="badge-dot"></span>
+      <span>Updated 2 hours ago · 47 vendors monitored</span>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl border border-black/8 shadow-sm overflow-hidden overflow-x-auto">
+    <table class="w-full min-w-max">
+      <thead>
+        <tr class="border-b border-black/8">
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Vendor</th>
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Caliber</th>
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Price</th>
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Condition</th>
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Availability</th>
+          <th class="px-5 py-4 text-left text-xs font-display font-700 tracking-widest text-ink/40 uppercase">Shipping</th>
+          <th class="px-5 py-4"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">GrabAGun</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.8 · Verified FFL</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">.308 Win / 20"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,499</div>
+            <div class="text-xs text-green-600 font-body font-600">LOWEST</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">Free · 3–5 days</td>
+          <td class="px-5 py-4"><button class="cta-primary text-white font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Shark Coast Tactical</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.9 · Specialist Dealer</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">6.5 CM / 24" Bronze</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,549</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">$12.95 · 2–4 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">MidwayUSA</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.7 · Large Retailer</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">6.5 PRC / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,579</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">Free · 5–7 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Rifleman Firearms</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.6 · UK Specialist</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">.223 Rem / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,599</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">$8.95 · 3–5 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Alexander's Outdoor</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.5 · Authorized Dealer</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">.223 Rem / 20"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,619</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-amber-600"><span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>Low Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">Free · 4–6 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Al Flaherty's</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.8 · Canadian Dealer</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">.308 Win / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,649</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">$19.00 · 5–8 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">PrecisionRifle.com</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.9 · PRS Specialist</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">6.5 CM / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,679</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-blue-50 text-blue-700 border border-blue-200 px-2 py-1 rounded-lg font-body font-600">Demo</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>Available</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">Free · 2–3 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Nordic Arms Supply</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.7 · Import Specialist</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">.300 Win Mag / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,729</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-amber-600"><span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;display:inline-block;"></span>3 left</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">$22.00 · 7–10 days</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row border-b border-black/5">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Sportsman's Warehouse</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.4 · National Chain</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">7mm Rem Mag / 24"</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,749</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-lg font-body font-600">New</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>In Stock</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">In-store pickup</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Buy</button></td>
+        </tr>
+        <tr class="vendor-row">
+          <td class="px-5 py-4">
+            <div class="font-body font-700 text-forest text-sm">Gunbroker.com</div>
+            <div class="text-xs text-ink/40 font-body">★ 4.2 · Marketplace</div>
+          </td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">6.5 CM / 24" (lightly used)</td>
+          <td class="px-5 py-4">
+            <div class="font-display text-xl font-800 text-forest">$1,299</div>
+            <div class="text-xs text-blue-600 font-body font-600">USED DEAL</div>
+          </td>
+          <td class="px-5 py-4"><span class="text-xs bg-amber-50 text-amber-700 border border-amber-200 px-2 py-1 rounded-lg font-body font-600">Used-Exc.</span></td>
+          <td class="px-5 py-4"><div class="flex items-center gap-1.5 text-sm font-body text-green-700"><span class="badge-dot"></span>1 Available</div></td>
+          <td class="px-5 py-4 text-sm font-body text-ink/60">Buyer pays · Varies</td>
+          <td class="px-5 py-4"><button class="cta-secondary text-forest font-display font-700 tracking-wide text-sm px-4 py-2 rounded-xl">Bid</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-4 text-center">
+    <button class="font-display font-700 tracking-wide text-sm text-forest/50 hover:text-forest transition-colors">Show all 47 vendors ↓</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-forest text-white mt-8 py-16">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <div class="font-display text-2xl font-800 tracking-widest text-gold mb-3">TacticalFind</div>
+        <p class="font-serif text-white/50 text-base leading-relaxed max-w-sm">The precision firearms aggregator. Compare prices, find the best deal, and buy from verified dealers — all in one place.</p>
+      </div>
+      <div>
+        <div class="font-display text-xs tracking-widest uppercase text-gold/60 mb-4">Platform</div>
+        <div class="space-y-2 font-body text-sm text-white/50">
+          <div class="hover:text-white cursor-pointer transition-colors">Browse Rifles</div>
+          <div class="hover:text-white cursor-pointer transition-colors">Compare Vendors</div>
+          <div class="hover:text-white cursor-pointer transition-colors">Price Alerts</div>
+          <div class="hover:text-white cursor-pointer transition-colors">FFL Locator</div>
+        </div>
+      </div>
+      <div>
+        <div class="font-display text-xs tracking-widest uppercase text-gold/60 mb-4">Legal</div>
+        <div class="space-y-2 font-body text-sm text-white/50">
+          <div class="hover:text-white cursor-pointer transition-colors">Terms of Service</div>
+          <div class="hover:text-white cursor-pointer transition-colors">Privacy Policy</div>
+          <div class="hover:text-white cursor-pointer transition-colors">FFL Compliance</div>
+          <div class="hover:text-white cursor-pointer transition-colors">Contact</div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-body text-white/30">
+      <span>© 2025 TacticalFind Inc. All rights reserved. Firearms sales subject to federal and state law. FFL transfer required.</span>
+      <span>Prices last updated: April 16, 2026</span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY PRICE BAR -->
+<div class="sticky-bar bg-forest border-t border-gold/30 px-4 py-3" id="stickyBar">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="flex flex-wrap items-center gap-6">
+      <div class="text-center">
+        <div class="text-gold/60 text-xs font-body uppercase tracking-widest">Lowest Price</div>
+        <div class="font-display text-2xl font-800 text-white">$1,499</div>
+      </div>
+      <div class="hidden sm:block w-px h-10 bg-white/10"></div>
+      <div class="text-center">
+        <div class="text-gold/60 text-xs font-body uppercase tracking-widest">Avg. Price</div>
+        <div class="font-display text-2xl font-800 text-white/70">$1,634</div>
+      </div>
+      <div class="hidden sm:block w-px h-10 bg-white/10"></div>
+      <div class="text-center">
+        <div class="text-gold/60 text-xs font-body uppercase tracking-widest">vs MSRP</div>
+        <div class="font-display text-2xl font-800 text-green-400">Save 14%</div>
+      </div>
+    </div>
+    <div class="flex gap-3">
+      <button class="cta-primary text-white font-display font-700 tracking-wider text-base px-6 py-3 rounded-xl shadow-lg whitespace-nowrap">
+        ⚖ Compare All Vendors
+      </button>
+      <button onclick="document.getElementById('stickyBar').classList.remove('visible')" class="text-white/30 hover:text-white/70 transition-colors text-xl font-300 px-2">×</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Sticky bar on scroll
+  const bar = document.getElementById('stickyBar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 600) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  });
+
+  // Caliber selector
+  document.querySelectorAll('.feature-card').forEach(card => {
+    // already has hover via CSS
+  });
+
+  // Quantity selector
+  let qty = 1;
+  document.querySelectorAll('.qty-btn').forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      if (i % 2 === 0) qty = Math.max(1, qty - 1);
+      else qty = Math.min(10, qty + 1);
+      btn.parentElement.querySelector('span').textContent = qty;
+    });
+  });
+</script>
+</body>
+</html>
